@@ -13,6 +13,8 @@ locals {
   }
 }
 
+data "google_project" "project" {}
+
 resource "google_project_iam_policy" "common_service_agents_policy" {
   project     = var.GCP_PROJECT
   policy_data = data.google_iam_policy.service_agents_policy.policy_data
